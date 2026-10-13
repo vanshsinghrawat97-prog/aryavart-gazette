@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Aryavart Gazette</title>
+<link rel="icon" href="Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,800;1,500&family=UnifrakturCook:wght@700&family=Lora:ital@0;1&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ecdc;--paper:#faf5e8;--ink:#1b1712;--mute:#6b6254;--rule:#1b1712;--accent:#8c1c13;--gold:#b08a2e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14110d;--paper:#1d1812;--ink:#eadfc8;--mute:#a09580;--rule:#eadfc8;--accent:#d4553f;--gold:#d4a94a}}
+:root[data-theme="dark"]{--bg:#14110d;--paper:#1d1812;--ink:#eadfc8;--mute:#a09580;--rule:#eadfc8;--accent:#d4553f;--gold:#d4a94a}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Lora,Georgia,serif;line-height:1.6;background-image:radial-gradient(rgba(120,90,40,.07) 1px,transparent 1px);background-size:5px 5px}
+#prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;background:var(--accent);width:0;z-index:50}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.paper{background:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.18);margin:16px auto;max-width:1160px;padding:18px 28px 28px;border:1px solid var(--rule);outline:1px solid var(--rule);outline-offset:-8px}
+.top{display:flex;justify-content:space-between;gap:8px;font:500 12px Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--rule);padding-bottom:6px;flex-wrap:wrap}
+.mast{text-align:center;padding:14px 0 6px}
+.mast h1{font:700 clamp(40px,8vw,92px)/1 UnifrakturCook,'Playfair Display',serif;margin:0;letter-spacing:.01em}
+.mast p{margin:6px 0 0;font:italic 500 15px 'Playfair Display',serif;color:var(--mute)}
+.dbl{border-top:3px double var(--rule);border-bottom:1px solid var(--rule);height:8px;margin:10px 0}
+nav{display:flex;justify-content:center;gap:4px 22px;flex-wrap:wrap;font:500 13px Oswald,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid var(--rule)}
+nav button,.btn{background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:4px 2px;border-bottom:2px solid transparent}
+nav button:hover,nav button.on{color:var(--accent);border-color:var(--accent)}
+.tools{display:flex;gap:10px;align-items:center;margin:12px 0;flex-wrap:wrap}
+.tools input{flex:1;min-width:160px;padding:9px 12px;background:transparent;border:1px solid var(--rule);color:var(--ink);font:italic 15px Lora,serif}
+.pill{border:1px solid var(--rule);background:transparent;color:var(--ink);padding:8px 14px;font:500 12px Oswald,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.pill:hover{background:var(--ink);color:var(--paper)}
+.tick{display:flex;overflow:hidden;border:1px solid var(--rule);margin:10px 0;background:var(--ink);color:var(--paper);font:500 12px Oswald,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.tick b{background:var(--accent);color:#fff;padding:6px 12px;white-space:nowrap}
+.tick div{white-space:nowrap;padding:6px 0;animation:mq 40s linear infinite}
+@keyframes mq{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:0;margin-top:14px}
+.lead{padding-right:24px;border-right:1px solid var(--rule)}
+.side{padding-left:24px}
+.cat{font:500 12px Oswald,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.lead h2{font:800 clamp(28px,4vw,46px)/1.1 'Playfair Display',serif;margin:6px 0 10px;cursor:pointer}
+.lead h2:hover,.card h3:hover{color:var(--accent)}
+.by{font:500 12px Oswald,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.lead .ex{font-size:18px;margin-top:10px}
+.lead .ex:first-letter{font:800 64px/.8 'Playfair Display',serif;float:left;padding:6px 8px 0 0;color:var(--accent)}
+.card{padding:14px 0;border-bottom:1px solid var(--rule)}
+.card h3{font:700 21px/1.2 'Playfair Display',serif;margin:4px 0;cursor:pointer}
+.card p{margin:4px 0;font-size:15px;color:var(--mute)}
+.sec{display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px;border-top:3px double var(--rule)}
+.sec .card{padding:14px 18px;border-right:1px solid var(--rule)}
+.sec .card:nth-child(3n){border-right:0}.sec .card:nth-child(3n+1){padding-left:0}
+.hd{font:500 13px Oswald,sans-serif;letter-spacing:.24em;text-transform:uppercase;text-align:center;margin:22px 0 0;display:flex;align-items:center;gap:12px}
+.hd:before,.hd:after{content:"";flex:1;border-top:1px solid var(--rule)}
+.empty{text-align:center;color:var(--mute);font-style:italic;padding:40px 0}
+.foot{text-align:center;margin-top:26px;border-top:3px double var(--rule);padding-top:12px;font:italic 14px 'Playfair Display',serif;color:var(--mute)}
+#rd{position:fixed;inset:0;background:rgba(10,8,5,.7);backdrop-filter:blur(4px);display:none;overflow:auto;z-index:40;padding:20px 12px}
+#rd.open{display:block}
+.art{background:var(--paper);max-width:740px;margin:0 auto;padding:30px 34px 36px;border:1px solid var(--rule);outline:1px solid var(--rule);outline-offset:-7px;animation:up .35s ease}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.art h2{font:800 clamp(28px,5vw,44px)/1.1 'Playfair Display',serif;margin:8px 0}
+.art .body{font-size:18px;white-space:pre-wrap}
+.art .body:first-letter{font:800 68px/.8 'Playfair Display',serif;float:left;padding:6px 8px 0 0;color:var(--accent)}
+.row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+#adm{display:none;border:1px dashed var(--accent);padding:14px;margin:12px 0}
+#adm input,#adm select,#adm textarea{width:100%;margin:5px 0;padding:8px;background:transparent;border:1px solid var(--rule);color:var(--ink);font:15px Lora,serif}
+#adm textarea{min-height:130px}
+@media(max-width:760px){.paper{padding:14px;margin:0}.grid{grid-template-columns:1fr}.lead{padding:0;border:0}.side{padding:14px 0 0}.sec{grid-template-columns:1fr}.sec .card{padding:14px 0!important;border-right:0}.art{padding:22px 18px}}
+</style></head><body>
+<div id="prog"></div>
+<div class="paper"><div class="wrap" style="padding:0">
+<div class="top"><span id="dt"></span><span>Est. MMXXIV</span><span>Vol. I · Since 2024</span></div>
+<header class="mast"><h1>The Aryavarth Gazette</h1><p>“Truth, Told Plainly — Since the First Edition”</p></header>
+<div class="dbl"></div>
+<nav id="nav"></nav>
+<div class="tools"><input id="q" placeholder="Search the archives…"><button class="pill" id="th">◐ Theme</button><button class="pill" id="wr" style="display:none">✎ Write</button></div>
+<div id="adm">
+<input id="aT" placeholder="Headline"><input id="aA" placeholder="Byline (author)">
+<select id="aC"></select><textarea id="aB" placeholder="Write your article…"></textarea>
+<div class="row"><button class="pill" id="aS">Publish</button><button class="pill" id="aX">Close</button></div></div>
+<div class="tick"><b>Breaking</b><div id="tk"></div></div>
+<main id="main"></main>
+<div class="foot">© The Aryavart Gazette · Printed digitally, read everywhere.</div>
+</div></div>
+<div id="rd"></div>
+<script>
+var CATS=["All","Politcal","Geo - Political","Religion","Culture","Opinion"];
+var SEED=[
+{id:1,t:"Vajendra Singh Rawat ji’s remarks on the scriptures and Kaliyuga Brahmins",a:"Shree Vajendra Singh Rawat",c:"Opinion",d:"2026-3-26",b:"Greetings. Today, I present before you Vajendra Singh Rawat, and on this day I will tell you a bitter truth that every follower of Sanatana Dharma should understand and reflect upon; it is the sole duty of every follower of Sanatana Dharma.\n\nIn today’s age, the scriptures have explained that the number of so-called saints will increase, and people will be encouraged toward hypocrisy. People listen to sweet words and ordinary thoughts from such “saints” and begin to consider themselves authorized in Bhagavat knowledge. The condition of Hindus has become such that they do not even understand which varnas should wear the yajnopavita (sacred thread), or what its significance is. Hindus consider varna to be determined by karma, which is contrary to the principles of Manu Maharaj and is also an insult to the system he established for the welfare of humanity.\n\nThose crowds who dismiss eminent acharyas as false or as later interpolations, while encouraging hypocrisy, will themselves become partners in the destruction of Sanatana Dharma. The Brahmin of today has proved to be sycophantic, greedy, and selfish for wealth, just as the deities have explained. By abandoning their varna-based duties, Brahmins are cutting down the very branch on which they sit. The knowledge given by the deities is itself a great authority for a human being to live a meaningful human life. Hindus, by encouraging varna confusion, are running after the pursuit of wealth.\n\nAs a follower of Jagadguru Nischalananda Saraswati (referred to here as “Nigraha-acharya”), I myself declare that Hindus must become disciplined, and my complete political organization, while holding power, will teach the people the lessons of service and discipline.\n\nNow, let us speak about the Shastriya Sampradaya. The Shastriya Sampradaya is a tradition in which the number of followers may be small, but they are knowledgeable, free from hypocrisy, and capable of keeping themselves away from the influence of hypocrisy and Kali. As a Kshatriya politician, my only duty is to protect the nation and the people, and to make all varnas aware of their respective duties.\n\nJagadguru says: “Perform devotion, but also give importance to your children.” It is the duty of every Brahmin to give knowledge to every varna, make them aware of their varna-based duties, improve their life in this world and the hereafter, and protect their generations and lineage.\n\nHindus today try to receive Bhagavat knowledge from so-called saints—fools who have merely acquired a name—but observe their deception as well. They assume that merely hearing Bhagavat knowledge will bring about their own salvation. However, these people do not consider ordinary questions: Is that person qualified for the vyasapeetha? Has he been guided by eminent acharyas? Does he belong to a recognized sampradaya? And does he declare that he has been authorized for the vyasapeetha by eminent acharyas?\n\nPeople say that the deities cannot be so cruel as to institute the practice of sacrifice, but these people forget—or do not understand—that there are different kinds of offerings for the deities. “Sattvika” means that only vegetarian food may be offered as bhoga; “tamisra” (or the term used in the original) means that non-vegetarian food may be offered. Whenever a sacrifice is performed, it is said to produce three kinds of benefits:\n\n1.When a person offers a sacrifice, he may receive the opportunity in his next birth to slay demons.\n2. When the animal dies, it is said to attain heaven; after spending some time in heaven, it takes birth in a human womb.\n3. The shaktis accompanying the Goddess receive the offering as bhoga."},
+
+
+{id:2,t:"Pressure and Brutality Inflicted by Khalistanis on Hindus in Canada",a:"Shree Vajendra Singh Rawat",c:"Geo - Political Issues",d:"2025-11-10",b:"There has been a long-standing conspiracy—hatched by certain Punjabis—to create a new nation called Khalistan. Envisioned as a religious state, this proposed Khalistan seeks to encompass territories including Shimla, Haryana, Himachal Pradesh, Chandigarh, and even Lahore. To understand the current situation, it is essential to know the history: the Khalistani movement gained significant momentum following Operation Blue Star (initiated by Indira Gandhi on April 29, 1984), which deeply inflamed the sentiments of the Sikh community. While the dream of a separate Khalistan was held by only a few—and was neither endorsed nor desired by the Akali Dal—the movement persisted. Eventually, many Khalistani Sikhs migrated from India to Canada, where they began actively pursuing the Khalistan agenda. They have targeted Hindus there; for instance, an attack on Hindus occurred in Brampton. Meanwhile, back in India, Amritpal Singh was arrested on April 23, 2023, after 18 cartridges and 100 grams of heroin were recovered from his possession—an arrest the Punjab government had already planned.\n\nThe situation has now shifted; it is not just Hindus but the local Canadian population as well that has become frustrated with the Khalistanis. Recently, for example, an individual demanded that white people return to Europe. The Khalistanis have crossed boundaries to the extent that Khalistani leaders and MPs have even demanded the resignation of Prime Minister Justin Trudeau. If this trend continues, there is no telling when Canada might effectively transform into a Khalistan-like state. Unless swift action is taken against them, this could prove dangerous for other nations as well."},
+
+
+{id:3,t:"Attacks and atrocities against Hindus in Bangladesh following the coup.",a:"Shree Vajendra Singh Rawat",c:"Geo - Political Issues",d:"2026-8-12",b:"Chaos has engulfed Bangladesh since Sheikh Hasina stepped down as Prime Minister. Initially, Hindus united to stage protests, but the situation has since changed. While residents once guarded their homes with weapons, the Bangladeshi police and army are now attacking Hindu protesters. In one instance, police entered an office and smashed a CCTV camera with a baton—a chilling attempt to destroy evidence. With no functioning government in the country, the police and army are roaming the streets openly, creating a terrifying situation for the local Hindu population. The BJP has neither commented on the matter nor made any effort to evacuate Hindus from the region; is this the BJP's true version of Hindutva? Meanwhile, Muslims in the area have begun raising slogans and have even issued a fatwa calling for the destruction of ISKCON. Hindus must now take action themselves; if they fail to do so, all Hindus there risk being killed."},
+
+
+{id:4,t:"The oppression faced by men.",a:"Shree Vajendra Singh Rawat",c:"Societal Issues",d:"2025-3-21",b:"Men, once considered a dominant force who ruled the era, now find themselves sidelined as urban society elevates women to positions of power—allowing them to dominate men and keep them under their thumb. Nowadays, some women weaponize the law to exploit men. Unless men rise up, this oppression will only escalate. The spread of feminism and woke culture has emboldened women, creating a sense of entitlement; to root this out, this ideology itself must be dismantled. Indian culture does not endorse or accommodate such behavior, though there are women who have worked hard to help men overcome these challenges. Recent cases—such as those involving Atul Subhash and Mr. Khurana—highlight instances where men are severely exploited by women who live lavishly on their hard-earned money. Neither the judicial system nor news channels address this issue. Society, too, has played a significant role in exacerbating this problem. If a woman is raped and killed, protests erupt at Delhi’s Red Fort, and the justice system swings into swift action; yet, when a man grapples with such issues, neither society nor the justice system offers support. If men do not become aware and take a stand, they will continue to endure this oppression. Men must protest and launch a movement against this.\n\nAs long as feminism exists, men will continue to suffer such oppression."},
+
+
+{id:5,t:"The Bharatiya Janata Party is an objectionable organization.",a:"Shree Vajendra Singh",c:"Politics",d:"2025-2-12",b:"The Bharatiya Janata Party is an organization that has cast a shadow of doubt over the unity and integrity of the entire nation. It is an organization currently in power thanks to Hindu voters, yet—observe their cunning—they raised issues in favor of Hindus without actually fulfilling their duties towards them; this is a matter that causes both anger and distress. While a Hindu certainly identifies as one, in the present times, they are not upholding the duties expected of a Hindu; instead, they prioritize self-interest, which renders them foolish and obstinate rather than virtuous and steadfast. Leaders of the Bharatiya Janata Party, who ought to have familiarized the people with *Sanatan* principles and discipline, have instead encouraged them to indulge in arbitrary behavior, thereby jeopardizing their well-being in both this world and the hereafter. How can such petty politicians ever serve as guides for Hindus? The title of 'Leader' (*Neta*) is one that truly belongs to Lord Narayana; these sycophants and hypocrites have shown no respect for that dignity either. The party has committed numerous scams in the name of development—fraud involving roads, water tanks, and various other materials. Modi, who initially postured as a champion of Hindu interests, now parades around as a secularist. He travels abroad, fraternizing and laughing all day with *Mlechchhas* (foreigners/outsiders). He possesses neither political acumen nor an understanding of the public; his existence is driven solely by the need to fill his own belly and pander to Adani. Shri Jagadguru Vidyamartand Nigrahacharya (Shri Bhagvatanand Guru) condemned him, stating: *Sannipaton naram cheva Shivaprasad bhanjakam*—meaning, a person who desecrates the *Shivling* or commits betrayal becomes afflicted by the disease of *Sannipat* (a severe, delirious fever). This verse illustrates how one who digs a pit for others—as Modi does—ultimately falls into the very pit he dug himself. The BJP is nothing but a hypocritical organization that is fooling Hindus through deception."},];
+var KEY="chronicle.articles.v1",PASS="chronicle",cat="All",arts=[];
+function ld(){try{var r=localStorage.getItem(KEY);if(r)return JSON.parse(r)}catch(e){}return null}
+function sv(){try{localStorage.setItem(KEY,JSON.stringify(arts.filter(function(x){return x.u})))}catch(e){}}
+var mine=ld()||[];arts=mine.concat(SEED);
+function $(i){return document.getElementById(i)}
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function fd(s){return new Date(s).toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})}
+$("dt").textContent=new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+function nav(){$("nav").innerHTML=CATS.map(function(c){return '<button data-c="'+c+'" class="'+(c==cat?"on":"")+'">'+c+'</button>'}).join("");
+$("aC").innerHTML=CATS.slice(1).map(function(c){return "<option>"+c+"</option>"}).join("")}
+function card(x){return '<div class="card"><div class="cat">'+esc(x.c)+'</div><h3 data-o="'+x.id+'">'+esc(x.t)+'</h3><div class="by">'+esc(x.a)+' · '+fd(x.d)+'</div><p>'+esc(x.b.slice(0,110))+'…</p></div>'}
+function render(){var q=$("q").value.toLowerCase();
+var l=arts.filter(function(x){return(cat=="All"||x.c==cat)&&(!q||(x.t+x.b+x.a).toLowerCase().indexOf(q)>-1)});
+$("tk").textContent=arts.slice(0,5).map(function(x){return x.t}).join("   ✦   ");
+if(!l.length){$("main").innerHTML='<div class="empty">No articles found in this section.</div>';return}
+var h=l[0],s=l.slice(1,4),r=l.slice(4);
+$("main").innerHTML='<div class="grid"><div class="lead"><div class="cat">'+esc(h.c)+' · Lead Story</div><h2 data-o="'+h.id+'">'+esc(h.t)+'</h2><div class="by">By '+esc(h.a)+' · '+fd(h.d)+'</div><p class="ex">'+esc(h.b.split("\n")[0])+'</p><div class="row"><button class="pill" data-o="'+h.id+'">Continue Reading →</button></div></div><div class="side">'+(s.map(card).join("")||"")+'</div></div>'+(r.length?'<div class="hd">More From The Edition</div><div class="sec">'+r.map(card).join("")+'</div>':"")}
+function open(id){var x=arts.filter(function(a){return a.id==id})[0];if(!x)return;var wc=x.b.split(/\s+/).length;
+var rd=$("rd");rd.innerHTML='<div class="art"><div class="cat">'+esc(x.c)+'</div><h2>'+esc(x.t)+'</h2><div class="by">By '+esc(x.a)+' · '+fd(x.d)+' · '+Math.max(1,Math.round(wc/200))+' min read</div><div class="dbl"></div><div class="body">'+esc(x.b)+'</div><div class="row"><button class="pill" data-x="1">← Back to Front Page</button>'+(x.u&&$("adm").dataset.on?'<button class="pill" data-del="'+x.id+'">Delete</button>':"")+'</div></div>';
+rd.classList.add("open");rd.scrollTop=0;document.body.style.overflow="hidden"}
+function close(){$("rd").classList.remove("open");document.body.style.overflow="";$("prog").style.width=0}
+document.addEventListener("click",function(e){var t=e.target.closest("[data-c],[data-o],[data-x],[data-del]");
+if(e.target.id=="rd"||(t&&t.dataset.x))return close();
+if(!t)return;
+if(t.dataset.c){cat=t.dataset.c;nav();render()}
+else if(t.dataset.o)open(t.dataset.o);
+else if(t.dataset.del){arts=arts.filter(function(a){return a.id!=t.dataset.del});sv();close();render()}});
+$("rd").addEventListener("scroll",function(){var r=$("rd");$("prog").style.width=(r.scrollTop/Math.max(1,r.scrollHeight-r.clientHeight)*100)+"%"});
+$("q").addEventListener("input",render);
+$("th").onclick=function(){var d=document.documentElement,dark=getComputedStyle(d).getPropertyValue("--bg").trim()=="#14110d";d.dataset.theme=dark?"light":"dark"};
+if(location.search.indexOf("admin=1")>-1){$("wr").style.display="inline-block"}
+$("wr").onclick=function(){if(!$("adm").dataset.on){var p=prompt("Editor passcode:");if(p!==PASS)return alert("Incorrect passcode.");$("adm").dataset.on=1}$("adm").style.display="block"};
+$("aX").onclick=function(){$("adm").style.display="none"};
+$("aS").onclick=function(){var t=$("aT").value.trim(),b=$("aB").value.trim();if(!t||!b)return alert("Headline and body are required.");
+arts.unshift({id:Date.now(),t:t,a:$("aA").value.trim()||"Staff Reporter",c:$("aC").value,d:new Date().toISOString().slice(0,10),b:b,u:1});
+sv();$("aT").value=$("aB").value="";$("adm").style.display="none";cat="All";nav();render()};
+document.addEventListener("keydown",function(e){if(e.key=="Escape")close()});
+nav();render();
+</script></body></html>
